@@ -7,7 +7,7 @@ namespace CommandService.Controllers
     [Route("api/c/[controller]")]
     public class PlatformsController : ControllerBase
     {
-        [HttpGet]
+        [HttpPost]
         public ActionResult TestInboundConnection()
         {
             Console.WriteLine("--> Inbound Request Received");
