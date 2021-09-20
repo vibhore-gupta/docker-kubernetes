@@ -1,31 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: platforms-depl
+  name: commands-depl
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: platformservice
+      app: commandservice
   template:
     metadata:
       labels:
-        app: platformservice
+        app: commandservice
     spec:
       containers:
-        - name: platformservice
-          image: vibhoregupta/platformservice:latest
+        - name: commandservice
+          image: vibhoregupta/commandservice:latest
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: platforms-cluster-ip
+  name: commands-cluster-ip
 spec:
   type: ClusterIP
   selector:
-    app: platformservice
+    app: commandservice
   ports:
-  - name: platformservice
+  - name: commandservice
   protocol: TCP
   ports: 80
   targetPort: 80
