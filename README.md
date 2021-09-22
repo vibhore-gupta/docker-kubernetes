@@ -1,12 +1,11 @@
 # docker-kubernetes
 ## Goal:
-To establish asynchronous commnuication between two dotent REST apis using RabbitMq. 
+To run dotnet Rest Apis in a kubernetes cluster and establish asynchronous commnuication between them by using RabbitMq. 
 This project has two services
 1. PlatformService - uses Sql Server database 
 2. CommandService - uses InMemory data
 
-
-Both the services will be running in a kubermnetes cluster in their individual pods. Sql server will also be running in a separate pod. Outside Interaction with platformservice will be enabled with help of ingress nginx API gateway which will route requests to services based on path values.
+Both the services will be running in a kubernetes cluster in their individual pods. Sql server will also be running in a separate pod. Outside Interaction with platformservice will be enabled with help of ingress nginx API gateway which will route requests to services based on path values.
 
 Following are the steps to get these running in a kubernetes cluster
 
