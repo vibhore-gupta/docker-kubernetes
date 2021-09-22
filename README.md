@@ -1,8 +1,12 @@
 # docker-kubernetes
-How to run dotnet webapi in kubernetes cluster using docker images.
+## Goal:
+To establish asynchronous commnuication between two dotent REST apis using RabbitMq. 
 This project has two services
-1. PlatformService
-2. CommandService
+1. PlatformService - uses Sql Server database 
+2. CommandService - uses InMemory data
+
+
+Both the services will be running in a kubermnetes cluster in their individual pods. Sql server will also be running in a separate pod. Outside Interaction with platformservice will be enabled with help of ingress nginx API gateway which will route requests to services based on path values.
 
 Following are the steps to get these running in a kubernetes cluster
 
@@ -57,7 +61,7 @@ Following are the steps to get these running in a kubernetes cluster
     ```
     kubectl apply -f platforms-np-srv.yaml
     ```
-    To get the port from which we can access platformservice run the below command and tlook for servicetype ClusterIp ake note of the port
+    To get the port from which we can access platformservice run the below command and look for servicetype ClusterIp and take note of the externalPort.
     ```
     kubectl get services
     ```
